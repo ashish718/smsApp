@@ -13,7 +13,7 @@ export default function Settings() {
 	const [ adminPhone, setAdminPhone ] = useState('');
 	const handleChangePhone = useCallback((newNumber) => setAdminPhone(newNumber), []);
 
-	const [ senderID, setSenderID ] = useState('ALERTS');
+	const [ senderID, setSenderID ] = useState('UPDATE');
 	const handleChangeSenderID = useCallback((newValue) => setSenderID(newValue), []);
 
 	const [ orderCreateCustomer, setOrderCreateCustomer ] = useState(false);

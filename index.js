@@ -18,7 +18,7 @@ const morgan = require('morgan');
 const mongoConnect = require('connect-mongo')(session);
 const axios = require('axios');
 
-require('newrelic');
+// require('newrelic');
 
 const Store = require('./models/Shop');
 const Url = require('./models/Url');

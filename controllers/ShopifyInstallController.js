@@ -19,12 +19,12 @@ const forwardingAddress = process.env.BASEURL
 
 exports.InstallApp = async(req, res)=>{
   console.log("shop id is", req.query.shop);
-  
+
   req.session.shop = req.query.shop;
 	const shop = req.query.shop;
 	if (shop) {
 		const state = nonce();
-		const redirectUri = forwardingAddress + '/shopify/callback';
+		const redirectUri = forwardingAddress + '/install/shopify/callback';
 		const installUrl =
 			'https://' +
 			shop +

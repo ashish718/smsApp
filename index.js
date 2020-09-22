@@ -22,7 +22,7 @@ require('newrelic');
 
 const Store = require('./models/Shop');
 const Url = require('./models/Url');
-let {cronFunction} = require('./utils/cron')
+let {cronFunction} = require('./utils/Cron')
 
 const {connectDB} = require('./db/connectMongo');
 

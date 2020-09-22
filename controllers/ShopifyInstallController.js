@@ -19,6 +19,7 @@ const forwardingAddress = process.env.BASEURL
 
 exports.InstallApp = async(req, res)=>{
   console.log("shop id is", req.query.shop);
+  
   req.session.shop = req.query.shop;
 	const shop = req.query.shop;
 	if (shop) {

@@ -39,15 +39,15 @@ if (process.env.NODE_ENV === 'development') {
 	app.use(morgan('dev'));
 }
 
-app.use(function(req, res, next) {
-	if (!req.session.views) {
-		req.session.views = {};
-	}
-	pathname = parseurl(req).pathname;
-	// count the views
-	req.session.views[pathname] = (req.session.views[pathname] || 0) + 1;
-	next();
-});
+// app.use(function(req, res, next) {
+// 	if (!req.session.views) {
+// 		req.session.views = {};
+// 	}
+// 	pathname = parseurl(req).pathname;
+// 	// count the views
+// 	req.session.views[pathname] = (req.session.views[pathname] || 0) + 1;
+// 	next();
+// });
 
 
 //Middleware Routes

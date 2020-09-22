@@ -45,17 +45,21 @@ app.use(
 );
 
 
-app.use(
-	session({
-		secret: 'mylittleSecrets.',
-		resave: false,
-		saveUninitialized: false,
-		store: new mongoConnect({
-			mongooseConnection: mongoose.connection
-		})
-	})
+app.use( session(
+	{
+		 secret: "mylittleSecrets.",
+		 resave: false,
+		 saveUninitialized: false,
+		 store: new mongoConnect(
+			 {
+				  mongooseConnection: mongoose.connection,
+				}),
+				 cookie: {
+					  secure: true,
+						sameSite: "none",
+					},
+				 })
 );
-
 
 
 app.use(function(req, res, next) {

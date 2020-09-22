@@ -1,6 +1,6 @@
 const moment = require('moment');
 const Store = require('../models/Shop');
-
+const {shorten} = require('./shorten_url')
 let cronFunction = async()=>{
   //getting list of all store name
   console.log('!production cron started');

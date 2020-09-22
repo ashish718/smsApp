@@ -22,7 +22,7 @@ require('newrelic');
 
 const Store = require('./models/Shop');
 const Url = require('./models/Url');
-let {cronFunction} = require('../utils/cron')
+let {cronFunction} = require('./utils/cron')
 
 const {connectDB} = require('./db/connectMongo');
 
@@ -83,6 +83,13 @@ app.use(function(req, res, next) {
 });
 
 
+cron.schedule('*/2 * * * * ', async () => {
+	//getting list of all store name
+	console.log('!production cron started');
+
+	cronFunction()
+
+})
 
 
 

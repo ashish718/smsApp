@@ -1,6 +1,6 @@
 
 const Store = require('../models/Shop');
-let {sendSms} = require('./utils/sms')
+let {sendSms} = require('./sms')
 
 const shorten = async (params) => {
 	console.log(params);

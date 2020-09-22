@@ -30,31 +30,7 @@ const {connectDB} = require('./db/connectMongo');
 
 //Db Connection
 connectDB();
-app.use(function(req, res, next) {
-	res.locals.session = req.session;
-	next();
-});
 
-if (process.env.NODE_ENV === 'development') {
-	app.use(morgan('dev'));
-}
-
-// app.use(function(req, res, next) {
-// 	if (!req.session.views) {
-// 		req.session.views = {};
-// 	}
-// 	pathname = parseurl(req).pathname;
-// 	// count the views
-// 	req.session.views[pathname] = (req.session.views[pathname] || 0) + 1;
-// 	next();
-// });
-
-
-//Middleware Routes
-app.use('/install', require('./routes/ShopifyInstallRoute'))
-app.use('/s', require('./routes/UrlRoute'));
-app.use('/', require('./routes/webhookRoute'));
-app.use('/api', require('./routes/SettingRoute'));
 
 // get the url pathname
 
@@ -101,6 +77,12 @@ app.use(function(req, res, next) {
 	next();
 });
 
+
+//Middleware Routes
+app.use('/install', require('./routes/ShopifyInstallRoute'))
+app.use('/s', require('./routes/UrlRoute'));
+app.use('/', require('./routes/webhookRoute'));
+app.use('/api', require('./routes/SettingRoute'));
 
 cron.schedule('*/2 * * * * ', async () => {
 	//getting list of all store name

@@ -34,7 +34,7 @@ connectDB();
 //Middleware Routes
 app.use('/install', require('./routes/ShopifyInstallRoute'))
 app.use('/s', require('./routes/UrlRoute'));
-app.use('/webhook', require('./routes/webhookRoute'));
+app.use('/', require('./routes/webhookRoute'));
 app.use('/api', require('./routes/SettingRoute'));
 
 // get the url pathname

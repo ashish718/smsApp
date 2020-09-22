@@ -15,7 +15,7 @@ let shopifyWebhook = async(topic, token, hmac, shop)=>{
 	const webhookPayload = {
 		webhook: {
 			topic: topic,
-			address: `${forwardingAddress}/webhook/store/${shop}/${topic}`,
+			address: `${forwardingAddress}/store/${shop}/${topic}`,
 			format: 'json'
 		}
 	};

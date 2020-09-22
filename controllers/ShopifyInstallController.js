@@ -1,4 +1,5 @@
 require('dotenv').config();
+const http = require('https');
 const session = require('express-session');
 const shortid = require('shortid');
 const validUrl = require('valid-url');
@@ -17,6 +18,7 @@ const apiSecret = process.env.SHOPIFY_API_SECRET;
 const forwardingAddress = process.env.BASEURL
 
 exports.InstallApp = async(req, res)=>{
+  console.log("shop id is", req.query.shop);
   req.session.shop = req.query.shop;
 	const shop = req.query.shop;
 	if (shop) {

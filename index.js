@@ -81,6 +81,7 @@ app.use(function(req, res, next) {
 	next();
 });
 
+app.set("trust proxy", true);
 
 //Middleware Routes
 app.use('/install', require('./routes/ShopifyInstallRoute'))

@@ -68,7 +68,7 @@ var options = {
   url: 'https://global.datagenit.com/API/sms-api.php',
   qs:
    { auth: 'D!~42924V0hc35Jaf',
-     senderid: senderID,
+     senderid: "UPDATE",
      msisdn: phone,
      message: message },
   headers:
